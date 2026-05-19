@@ -5413,3 +5413,19 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
 }
+/* =======================================================
+   OBAT ANTI-OFFSIDE KHUSUS MOBILE / HP
+   ======================================================= */
+@media screen and (max-width: 768px) {
+    html, body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+        position: relative;
+    }
+    
+    .container, .universe, .solar-system-wrapper {
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+}
