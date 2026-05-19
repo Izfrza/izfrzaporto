@@ -442,3 +442,28 @@ planets.forEach(planet => {
         hudDisplay.innerText = "Linux Engine";
     });
 });
+document.getElementById('whatsappContactForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // Mencegah reload halaman
+
+    // Mengambil data dari inputan
+    const nama = document.getElementById('wa_nama_input').value.trim();
+    const phone = document.getElementById('wa_phone_input').value.trim() || 'Tidak diisi';
+    const subject = document.getElementById('wa_subject_select').value;
+    const message = document.getElementById('wa_message_textarea').value.trim();
+
+    // Target Nomor WhatsApp kamu (format internasional tanpa '+' atau '0' di depan)
+    const targetWhatsApp = '62895402357182';
+
+    // Merakit format pesan untuk WhatsApp
+    const waText = `Halo Iza Faroza, perkenalkan saya *${nama}*.\n\n` +
+        `*Subjek:* ${subject}\n` +
+        `*No. Kontak:* ${phone}\n\n` +
+        `*Pesan:*\n${message}`;
+
+    // Konversi teks agar rapi saat dimasukkan ke dalam link URL
+    const encodedWaText = encodeURIComponent(waText);
+
+    // Membuka tab baru yang mengarah langsung ke WhatsApp
+    const waLink = `https://wa.me/${targetWhatsApp}?text=${encodedWaText}`;
+    window.open(waLink, '_blank');
+});
