@@ -1104,13 +1104,13 @@ header .menu-icon:hover {
         grid-template-columns: auto;
     }
 
-    /* FIX OFFSIDE: Mencegah grid-column melampaui lebar layar pada grid 1 kolom */
     .card:nth-child(3) {
-        grid-column: span 1;
+        grid-column: span 1; /* FIX OFFSIDE */
         height: 70vh;
     }
+
     .card:nth-child(4) {
-        grid-column: span 1; 
+        grid-column: span 1; /* FIX OFFSIDE */
     }
 
     .info-cards .card h1 {
@@ -1156,4 +1156,8 @@ header .menu-icon:hover {
 
     .blackhole-box video {
         width: 100%;
-        margin-top: -
+        margin-top: -15%;
+    }
+
+    .autoBlur {
+        animation: n
