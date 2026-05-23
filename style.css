@@ -3,10 +3,12 @@ Body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
+    overflow-x: hidden; /* FIX OFFSIDE */
 }
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden; /* FIX OFFSIDE */
 }
 
 .container {
@@ -1102,9 +1104,13 @@ header .menu-icon:hover {
         grid-template-columns: auto;
     }
 
+    /* FIX OFFSIDE: Mencegah grid-column melampaui lebar layar pada grid 1 kolom */
     .card:nth-child(3) {
-        grid-column: span 2;
+        grid-column: span 1;
         height: 70vh;
+    }
+    .card:nth-child(4) {
+        grid-column: span 1; 
     }
 
     .info-cards .card h1 {
@@ -1150,222 +1156,4 @@ header .menu-icon:hover {
 
     .blackhole-box video {
         width: 100%;
-        margin-top: -15%;
-    }
-
-    .autoBlur {
-        animation: none;
-    }
-
-    .hero {
-        flex-direction: column;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .hero-info {
-        position: relative;
-        left: 0;
-        width: 100%;
-        bottom: 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .hero-info h1 {
-        font-size: 28px;
-        max-width: 100%;
-        line-height: 35px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-    }
-
-    .hero-info p {
-        max-width: 90%;
-        font-size: 16px;
-        line-height: 22px;
-        margin-bottom: 20px;
-    }
-
-    .skills-video-box {
-        display: none;
-    }
-
-    .scroll-down {
-        left: 45%;
-        bottom: 5%;
-    }
-
-    .info-section {
-        width: 90%;
-        margin-top: 50px;
-    }
-
-    .section-title {
-        font-size: 30px;
-    }
-
-    .info-cards {
-        gap: 15px;
-    }
-
-    .card {
-        height: auto;
-        min-height: 35vh;
-    }
-
-    .card h1 {
-        font-size: 18px;
-        bottom: 35%;
-    }
-
-    .card p {
-        font-size: 12px;
-        max-width: 90%;
-        line-height: 18px;
-    }
-
-    .card:nth-child(3) {
-        grid-column: span 1;
-        height: auto;
-        min-height: 50vh;
-    }
-
-    .card:nth-child(3) h1 {
-        bottom: 20%;
-    }
-
-    .card:nth-child(3) p {
-        bottom: 10%;
-    }
-
-    .card:nth-child(4) {
-        grid-column: span 1;
-    }
-
-    .card:nth-child(4) h1 {
-        bottom: 30%;
-    }
-
-    .card video {
-        width: 90%;
-        margin-top: 15%;
-    }
-
-    .my-project {
-        width: 90%;
-        height: auto;
-        margin-top: 100px;
-        margin-bottom: 300px;
-    }
-
-    .project-card {
-        flex-direction: column;
-        height: auto;
-        gap: 30px;
-        margin-bottom: 50px;
-    }
-
-    .project-vidbox {
-        width: 100%;
-        min-width: 100%;
-        padding: 0;
-    }
-
-    .project-info {
-        width: 100%;
-        padding: 0;
-        align-items: center;
-        text-align: center;
-    }
-
-    .project-info h1 {
-        width: 100%;
-        max-width: 100%;
-        text-wrap: wrap;
-    }
-
-    .project-info p {
-        width: 100%;
-        max-width: 100%;
-        min-width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .skills-section {
-        display: none;
-    }
-
-    .contact-section {
-        width: 90%;
-        flex-direction: column;
-        height: auto;
-        gap: 50px;
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-
-    .contact-section h1 {
-        position: relative;
-        left: 0;
-        top: 0;
-        margin-bottom: 30px;
-        font-size: 30px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .social-box {
-        width: 100%;
-        align-items: center;
-    }
-
-    .social-box a {
-        font-size: 16px;
-    }
-
-    .social-box i {
-        font-size: 24px;
-    }
-
-    .contact-box {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .contact-box p {
-        font-size: 16px;
-    }
-
-    .contact-box input {
-        width: 90%;
-    }
-
-    .contact-box button {
-        margin-top: 20px;
-    }
-
-    .sidebar ul li a {
-        font-size: 24px;
-    }
-
-    .close-icon {
-        font-size: 40px;
-    }
-
-    .social-sidebar {
-        margin-top: 40px;
-    }
-
-    .social-sidebar a {
-        font-size: 28px;
-    }
-}
+        margin-top: -
