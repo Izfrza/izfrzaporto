@@ -1020,6 +1020,7 @@ header .menu-icon:hover {
 }
 
 .social-sidebar a {
+    
     font-size: 35px;
     padding: 5px 5px;
     cursor: pointer;
@@ -1168,3 +1169,36 @@ header .menu-icon:hover {
     .hero-info {
         bottom: 5%;
     }
+    }
+    /* ========================================= */
+/* JURUS NABRAK OFFSIDE (TARUH PALING BAWAH) */
+/* ========================================= */
+
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+}
+
+@media screen and (max-width: 768px) {
+    /* Paksa semua elemen ga ada yang ngelebihi layar */
+    * {
+        max-width: 100vw !important;
+    }
+    
+    /* Nabrak layout biar ke bawah, bukan ke samping */
+    .project-card, .contact-section {
+        flex-direction: column !important;
+    }
+
+    /* Bunuh min-width 400px yang bikin jebol di HP */
+    .project-vidbox, .project-info, .project-info p {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Paksa teks turun ke bawah, ga bablas ke kanan */
+    .project-info h1, .Designer h1, .coder h1 {
+        white-space: normal !important;
+        text-wrap: wrap !important;
+    }
+}
