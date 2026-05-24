@@ -5422,3 +5422,9 @@ body {
     /* Tambahkan ini untuk mencegah scroll ke samping */
     overflow-x: hidden;
 }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
