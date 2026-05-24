@@ -3,26 +3,20 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
-    /* FIX OFFSIDE: Kunci overflow di body */
-    overflow-x: hidden !important;
-    max-width: 100vw;
-    position: relative;
+    /* Kunci offside HANYA di body agar animasi scroll (view timeline) tidak rusak */
+    overflow-x: hidden;
+    width: 100%;
 }
 
 html {
     scroll-behavior: smooth;
-    /* FIX OFFSIDE: iOS Safari butuh overflow di html juga */
-    overflow-x: hidden !important;
-    max-width: 100vw;
-    width: 100%;
+    /* Jangan beri overflow: hidden di sini agar teks desktop tidak hilang */
 }
 
 .container {
     position: relative;
     width: 100%;
-    /* FIX OFFSIDE: Pastikan container utama tidak melebihi viewport */
-    max-width: 100vw;
-    overflow-x: hidden !important;
+    height: 100%; /* Kembalikan height 100% yang sebelumnya terhapus */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,6 +30,7 @@ html {
     bottom: 0;
     z-index: -1;
     mix-blend-mode: overlay;
+}
 }
 
 /* ==================== HEADER ULTIMATE - STYLE SEPERTI FOOTER ==================== */
