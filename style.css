@@ -5390,3 +5390,8 @@ header .menu-icon:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
