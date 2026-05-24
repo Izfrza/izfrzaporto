@@ -3,26 +3,16 @@ body {
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: lightgray;
-    /* FIX OFFSIDE: Kunci overflow di body */
-    overflow-x: hidden !important;
-    max-width: 100vw;
-    position: relative;
 }
 
 html {
     scroll-behavior: smooth;
-    /* FIX OFFSIDE: iOS Safari butuh overflow di html juga */
-    overflow-x: hidden !important;
-    max-width: 100vw;
-    width: 100%;
 }
 
 .container {
     position: relative;
     width: 100%;
-    /* FIX OFFSIDE: Pastikan container utama tidak melebihi viewport */
-    max-width: 100vw;
-    overflow-x: hidden !important;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -3282,6 +3272,17 @@ header .menu-icon:hover {
     }
 }
 
+/* Container fix */
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding-bottom: 30px;
+}
+
 /* ==================== CONTACT SECTION ULTIMATE - FULL RESPONSIVE ==================== */
 .contact-section {
     width: 95%;
@@ -3885,6 +3886,7 @@ header .menu-icon:hover {
 
 /* Fix untuk input di mobile */
 @media screen and (max-width: 480px) {
+
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -4119,6 +4121,18 @@ header .menu-icon:hover {
     }
 }
 
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    background-color: #001f7c38;
+    padding-top: 100px;
+    /* Tambahkan padding-top untuk memberi ruang header fixed */
+}
+
 @media screen and (max-width: 768px) {
     .container {
         padding-top: 80px;
@@ -4132,11 +4146,16 @@ header .menu-icon:hover {
     }
 }
 
-/* FIX OFFSIDE: Perbaikan box-sizing universal ke ::before dan ::after */
-*, *::before, *::after {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+/* Background bawaan body dihapus agar menyatu dengan portfolio utama */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: white;
 }
 
 /* Container Tata Surya - sesuaikan width/height jika ingin lebih kecil/besar */
@@ -5233,8 +5252,7 @@ header .menu-icon:hover {
     border-radius: 20px;
     padding: 40px;
     flex: 1;
-    /* FIX OFFSIDE: menggunakan fungsi min() agar tidak menjebol screen di bawah 320px */
-    min-width: min(320px, 100%);
+    min-width: 320px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.02);
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
@@ -5394,4 +5412,13 @@ header .menu-icon:hover {
     background: #1EBE5D;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightgray;
+    /* Tambahkan ini untuk mencegah scroll ke samping */
+    overflow-x: hidden;
 }
